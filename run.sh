@@ -42,16 +42,17 @@ go install github.com/hyperledger-labs/fabric-token-sdk/cmd/tokengen@v0.3.0;
 go install github.com/deepmap/oapi-codegen/cmd/oapi-codegen@latest;
 bash ./scripts/up.sh;
 
-# Install high-throughput chaincode
-cd ../test-network;
-bash network.sh deployCC -ccn bigdatacc -ccp ../high-throughput/chaincode-go/ -ccl go -ccep "OR('Org1MSP.peer','Org2MSP.peer')" -cci Init;
+# Get time execution
+execution_time_seconds=$(( $(date +%s) - starttime ))
+minutes=$((execution_time_seconds / 60))
+seconds=$((execution_time_seconds % 60))
 
 cat <<EOF
 
-Total setup execution time : $(($(date +%s) - starttime)) seconds ...
+Total setup execution time : $minutes minutes $seconds seconds ...
 
 EOF
 
 # Start monitor
-cd ./prometheus-grafana && docker-compose up -d;
+cd ../test-network/prometheus-grafana && docker-compose up -d;
 cd .. && bash monitordocker.sh;
