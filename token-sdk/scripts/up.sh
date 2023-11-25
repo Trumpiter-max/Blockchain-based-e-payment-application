@@ -28,7 +28,6 @@ while ! fabric-ca-client getcainfo -u localhost:27054 2>/dev/null; do echo "wait
 # generate the parameters needed for the tokenchaincode
 tokengen gen dlog --base 300 --exponent 5 --issuers keys/issuer/iss/msp --idemix keys/owner1/wallet/alice --auditors keys/auditor/aud/msp --output tokenchaincode
 
-
 # Start Fabric network
 # bash "$TEST_NETWORK_HOME/network.sh" up createChannel
 # copy the keys and certs of the peers, orderer and the client user
@@ -40,7 +39,7 @@ INIT_REQUIRED="--init-required" "$TEST_NETWORK_HOME/network.sh" deployCCAAS  -cc
 
 # Start token nodes
 sudo mkdir -p data/auditor data/issuer data/owner1 data/owner2
-sudo docker-compose up -d
+docker-compose up -d
 echo "
 Ready!
 

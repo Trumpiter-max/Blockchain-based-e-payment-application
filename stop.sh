@@ -6,15 +6,8 @@ containers=("grafana" \
             "prometheus" \
             "cadvisor")
 
-# Loop through each container
-for container in "${containers[@]}"
-do
-  # Stop the container
-  docker stop $container
-  
-  # Remove the container
-  docker rm $container
-done
+# Stop and remove all containers in one command
+docker stop "${containers[@]}" && docker rm "${containers[@]}"
 
 # Stop token assets 
 images=("token-sdk-owner2" \
@@ -23,27 +16,25 @@ images=("token-sdk-owner2" \
         "swaggerapi/swagger-ui" \
         "token-sdk-auditor")
 
-for image in "${images[@]}"
-do
-  # Get container IDs of running containers created from the image
-  container_ids=$(docker ps -a -q --filter ancestor=$image)
+# Remove all images in one command
+# docker rmi "${images[@]}"
 
-  # If there are any running containers, stop them
-  if [ ! -z "$container_ids" ]
-  then
-    docker stop $container_ids
-  fi
-done
-
-# Remove token compoments
-cd ./token-sdk && bash ./scripts/down.sh;
+# Stop and remove token components with docker-compose
+cd ./token-sdk && docker-compose down
+sudo rm -rf ./keys
+sudo rm -rf ./data
+docker network rm token-sdk_default
+docker network rm fabric_test
 
 # Stop the network 
 cd ../test-network/addOrg3/ && bash addOrg3.sh down;
 
-sudo rm -rf ../../high-throughput/application-go/wallet/
-sudo rm -rf ../../high-throughput/application-go/keystore/
+# Remove all unused system & network resources with one command
+echo "[+] This action will wipe out all your docker images, containers, networks, and volumes"
+sudo docker system prune -f
+sudo docker network prune -f
+sudo docker system df
 
-# Remove all unused system & network resources
-docker system prune -f
-docker network prune -f
+sudo rm -rf $HOME/.fabric-ca-client
+# Restart the docker service with systemctl
+sudo systemctl restart docker

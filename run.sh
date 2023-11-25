@@ -5,16 +5,22 @@ export TIMEOUT=10
 export DELAY=3
 
 # Set environment 
+# Path for fabric binaries
 export PATH=$PATH:${PWD}/bin
 export FAB_BINS=${PWD}/bin
 export FABRIC_CFG_PATH=${PWD}/config
+# Path for golang
 export GOPATH=$HOME/go
+export GO111MODULE=on
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# Path for token sdk
 export FTS_PATH=$GOPATH/src/github.com/hyperledger-labs/fabric-token-sdk
 export OAPI_PATH=$GOPATH/src/github.com/deepmap/oapi-codegen
 export $(./test-network/setOrgEnv.sh bank | xargs)
 export $(./test-network/setOrgEnv.sh business | xargs)
 export TEST_NETWORK_HOME=${PWD}/test-network;
+export CORE_PEER_TLS_ENABLED=true
 
 IMAGE_NAME="hyperledger/fabric"
 IMAGE_TAG="2.5.0"
@@ -38,8 +44,16 @@ bash network.sh createChannel;
 sudo git clone https://github.com/hyperledger-labs/fabric-token-sdk.git $FTS_PATH;
 sudo git clone https://github.com/deepmap/oapi-codegen.git $OAPI_PATH;
 cd ../token-sdk;
-go install github.com/hyperledger-labs/fabric-token-sdk/cmd/tokengen@v0.3.0;
+
+# Setup REST API endpoint
 go install github.com/deepmap/oapi-codegen/cmd/oapi-codegen@latest;
+oapi-codegen -config auditor/oapi-server.yaml swagger.yaml
+oapi-codegen -config issuer/oapi-server.yaml swagger.yaml
+oapi-codegen -config owner/oapi-server.yaml swagger.yaml
+oapi-codegen -config e2e/oapi-client.yaml swagger.yaml
+
+# Setup token sdk
+go install github.com/hyperledger-labs/fabric-token-sdk/cmd/tokengen@v0.3.0;
 bash ./scripts/up.sh;
 
 # Get time execution
@@ -54,5 +68,5 @@ Total setup execution time : $minutes minutes $seconds seconds ...
 EOF
 
 # Start monitor
-cd ../test-network/prometheus-grafana && docker-compose up -d;
-cd .. && bash monitordocker.sh;
+# cd ../test-network/prometheus-grafana && docker-compose up -d;
+# cd .. && bash monitordocker.sh;
