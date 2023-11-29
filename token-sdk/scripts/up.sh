@@ -29,8 +29,8 @@ while ! fabric-ca-client getcainfo -u localhost:27054 2>/dev/null; do echo "wait
 tokengen gen dlog --base 300 --exponent 5 --issuers keys/issuer/iss/msp --idemix keys/owner1/wallet/alice --auditors keys/auditor/aud/msp --output tokenchaincode
 
 # Start Fabric network
-# bash "$TEST_NETWORK_HOME/network.sh" up createChannel
 # copy the keys and certs of the peers, orderer and the client user
+
 sudo mkdir -p keys/fabric
 sudo cp -r "$TEST_NETWORK_HOME/organizations" keys/fabric/
 
