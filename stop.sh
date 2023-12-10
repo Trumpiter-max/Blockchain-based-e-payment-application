@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Delete docker brigde
+sudo ovs-vsctl del-br docker-br0
+
 echo "[+] This action will wipe out all your docker images, containers, networks, and volumes";
 
 # Stop monitor system

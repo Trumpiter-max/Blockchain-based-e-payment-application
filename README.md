@@ -5,13 +5,24 @@ This project based on template from [@HyperLedger](https://github.com/hyperledge
 - [Sample of Hyperledger Fabric](https://github.com/hyperledger/fabric-samples).
 - [SSI application to be developed on top of Hyperledger Fabric](https://github.com/hyperledger-labs/aries-fabric-wrapper).
 
-## Get started
+## Specs
 
-Environment of project:
+Environment of running network:
 
 - OS: Ubuntu 20.04 LTS amd64.
 - Docker & its components.
 - Go lang: go1.21.3 linux/amd64.
+- Java: 17.0.6 2023-01-17 LTS.
+- Maven: 3.8.3.
+- ovsdb-server: https://hub.docker.com/r/openvswitch/ovs.
+- Opendaylight: 
+- Openflow
+
+**Note*: there are some sources code of relative project inside this project for using or customizing.
+
+For application built on top of network:
+
+- Typescript with npm 10.2.3 and node 20.10.3.
 
 For testing environment & setup machine:
 
@@ -19,6 +30,8 @@ For testing environment & setup machine:
 - Virtual machine - VMware Workstation 17 with 8 processors and 8 GB memory.
 
 To get started with prerequirements from [this source](https://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html). Make sure the machine for installing has already install above requirements.
+
+## Get started
 
 To start network:
 
@@ -33,3 +46,5 @@ To stop network (this will clear everything of network):
 ```
 
 ##### Reference
+
+https://awjunaid.com/docker/how-to-use-ovs-with-docker/

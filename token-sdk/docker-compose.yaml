@@ -4,10 +4,12 @@ networks:
   test:
     name: fabric_test
     external: true
+    driver: bridge
 
 services:
   auditor:
     hostname: auditor.example.com
+    container_name: auditor.example.com
     restart: always
     build:
       context: ./auditor
@@ -30,6 +32,7 @@ services:
 
   issuer:
     hostname: issuer.example.com
+    container_name: issuer.example.com
     restart: always
     build:
       context: ./issuer
@@ -49,6 +52,7 @@ services:
 
   owner1:
     hostname: owner1.example.com
+    container_name: owner1.example.com
     restart: always
     build:
       context: ./owner
@@ -68,6 +72,7 @@ services:
 
   owner2:
     hostname: owner2.example.com
+    container_name: owner2.example.com
     restart: always
     build:
       context: ./owner
@@ -87,6 +92,7 @@ services:
 
   swagger-ui:
       image: swaggerapi/swagger-ui
+      container_name: swagger-ui
       ports:
           - '8082:8080'
       environment:

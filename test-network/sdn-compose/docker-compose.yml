@@ -1,0 +1,52 @@
+version: "3.7"
+
+services:
+    opendaylight:
+        stdin_open: true
+        tty: true
+        ports:  
+            - "6633:6633"
+            - "8183:8181" 
+            - "8103:8101"
+        container_name: opendaylight
+        image: opendaylight/centos8-opendaylight-controller-jdk17-mvn38-centos:latest
+        volumes:
+            - ./opendaylight/data:/opt/opendaylight/data
+            - ./opendaylight/etc:/opt/opendaylight/etc
+        environment:
+            - KARAF_FEATURES=odl-restconf,odl-l2switch-switch,odl-mdsal-apidocs
+    
+    ovsdb-server:
+        stdin_open: true
+        tty: true
+        image: libovsdb/ovs:latest
+        container_name: ovsdb-server
+        privileged: true
+        network_mode: host
+        command: ovsdb-server 
+        ports:
+            - "6640:6640"  
+            - "6653:6653"  
+        volumes:
+            - ./openvswitch/data:/etc/openvswitch
+
+    ovs-vswitchd:
+        stdin_open: true
+        tty: true
+        network_mode: host
+        container_name: ovs-vswitchd
+        privileged: true
+        image: libovsdb/ovs:latest
+        command: ovs-vswitchd
+        ports:
+            - "6641:6640" # OVSDB server
+            - "6654:6653" # OpenFlow
+        volumes:
+            - ./openvswitch/etc/database:/etc/openvswitch
+            - ./openvswitch/etc/log:/var/log/openvswitch
+            - ./openvswitch/etc/run:/var/run/openvswitch
+
+networks:
+    default:
+        name: fabric_test
+        driver: bridge

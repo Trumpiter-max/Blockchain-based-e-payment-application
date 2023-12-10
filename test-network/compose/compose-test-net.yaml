@@ -13,6 +13,7 @@ volumes:
 networks:
   test:
     name: fabric_test
+    driver: bridge
 
 services:
 

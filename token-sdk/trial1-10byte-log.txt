@@ -1,0 +1,455 @@
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 0 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 1 transactions for alice
+    e2e_test.go:239: TEST value not found for wallet alice in [{[] alice} {[] bob}]
+--- PASS: TestMain (4.28s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 1 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 3 transactions for alice
+    e2e_test.go:239: TEST value not found for wallet bob in [{[{TEST 1000}] alice} {[] bob}]
+    e2e_test.go:185: got 1 transactions for bob
+--- PASS: TestTransfer (2.73s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 3 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 0 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 5 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:239: TEST value not found for wallet dan in [{[] carlos} {[] dan}]
+    e2e_test.go:185: got 1 transactions for dan
+    e2e_test.go:185: got 1 transactions for dan
+    e2e_test.go:185: got 1 transactions for dan
+    e2e_test.go:160: got 1 transactions for dan
+--- PASS: TestTransferToSecondNode (4.44s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 7 transactions for alice
+--- PASS: TestRedeem (2.83s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 7 transactions for alice
+    e2e_test.go:160: got 7 transactions for alice
+    e2e_test.go:185: got 1 transactions for bob
+    e2e_test.go:160: got 1 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 1 transactions for dan
+    e2e_test.go:160: got 1 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.02s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 7 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 8 transactions for alice
+--- PASS: TestMain (2.63s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 8 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 10 transactions for alice
+    e2e_test.go:185: got 2 transactions for bob
+--- PASS: TestTransfer (2.57s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 10 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 1 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 12 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 2 transactions for dan
+    e2e_test.go:185: got 2 transactions for dan
+    e2e_test.go:185: got 2 transactions for dan
+    e2e_test.go:160: got 2 transactions for dan
+--- PASS: TestTransferToSecondNode (3.04s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 14 transactions for alice
+--- PASS: TestRedeem (2.61s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 14 transactions for alice
+    e2e_test.go:160: got 14 transactions for alice
+    e2e_test.go:185: got 2 transactions for bob
+    e2e_test.go:160: got 2 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 2 transactions for dan
+    e2e_test.go:160: got 2 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.03s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 14 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 15 transactions for alice
+--- PASS: TestMain (2.50s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 15 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 17 transactions for alice
+    e2e_test.go:185: got 3 transactions for bob
+--- PASS: TestTransfer (2.43s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 17 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 2 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 19 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 3 transactions for dan
+    e2e_test.go:185: got 3 transactions for dan
+    e2e_test.go:185: got 3 transactions for dan
+    e2e_test.go:160: got 3 transactions for dan
+--- PASS: TestTransferToSecondNode (3.61s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 21 transactions for alice
+--- PASS: TestRedeem (2.36s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 21 transactions for alice
+    e2e_test.go:160: got 21 transactions for alice
+    e2e_test.go:185: got 3 transactions for bob
+    e2e_test.go:160: got 3 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 3 transactions for dan
+    e2e_test.go:160: got 3 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.13s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 21 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 22 transactions for alice
+--- PASS: TestMain (2.52s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 22 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 24 transactions for alice
+    e2e_test.go:185: got 4 transactions for bob
+--- PASS: TestTransfer (2.73s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 24 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 3 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 26 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 4 transactions for dan
+    e2e_test.go:185: got 4 transactions for dan
+    e2e_test.go:185: got 4 transactions for dan
+    e2e_test.go:160: got 4 transactions for dan
+--- PASS: TestTransferToSecondNode (3.72s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 28 transactions for alice
+--- PASS: TestRedeem (2.46s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 28 transactions for alice
+    e2e_test.go:160: got 28 transactions for alice
+    e2e_test.go:185: got 4 transactions for bob
+    e2e_test.go:160: got 4 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 4 transactions for dan
+    e2e_test.go:160: got 4 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.80s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 28 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 29 transactions for alice
+--- PASS: TestMain (2.73s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 29 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 31 transactions for alice
+    e2e_test.go:185: got 5 transactions for bob
+--- PASS: TestTransfer (2.37s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 31 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 4 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 33 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 5 transactions for dan
+    e2e_test.go:185: got 5 transactions for dan
+    e2e_test.go:185: got 5 transactions for dan
+    e2e_test.go:160: got 5 transactions for dan
+--- PASS: TestTransferToSecondNode (2.61s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 35 transactions for alice
+--- PASS: TestRedeem (2.34s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 35 transactions for alice
+    e2e_test.go:160: got 35 transactions for alice
+    e2e_test.go:185: got 5 transactions for bob
+    e2e_test.go:160: got 5 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 5 transactions for dan
+    e2e_test.go:160: got 5 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.06s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 35 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 36 transactions for alice
+--- PASS: TestMain (2.45s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 36 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 38 transactions for alice
+    e2e_test.go:185: got 6 transactions for bob
+--- PASS: TestTransfer (2.79s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 38 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 5 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 40 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 6 transactions for dan
+    e2e_test.go:185: got 6 transactions for dan
+    e2e_test.go:185: got 6 transactions for dan
+    e2e_test.go:160: got 6 transactions for dan
+--- PASS: TestTransferToSecondNode (2.85s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 42 transactions for alice
+--- PASS: TestRedeem (2.31s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 42 transactions for alice
+    e2e_test.go:160: got 42 transactions for alice
+    e2e_test.go:185: got 6 transactions for bob
+    e2e_test.go:160: got 6 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 6 transactions for dan
+    e2e_test.go:160: got 6 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.32s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 42 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 43 transactions for alice
+--- PASS: TestMain (3.63s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 43 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 45 transactions for alice
+    e2e_test.go:185: got 7 transactions for bob
+--- PASS: TestTransfer (2.41s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 45 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 6 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 47 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 7 transactions for dan
+    e2e_test.go:185: got 7 transactions for dan
+    e2e_test.go:185: got 7 transactions for dan
+    e2e_test.go:160: got 7 transactions for dan
+--- PASS: TestTransferToSecondNode (2.67s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 49 transactions for alice
+--- PASS: TestRedeem (2.30s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 49 transactions for alice
+    e2e_test.go:160: got 49 transactions for alice
+    e2e_test.go:185: got 7 transactions for bob
+    e2e_test.go:160: got 7 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 7 transactions for dan
+    e2e_test.go:160: got 7 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.07s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 49 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 50 transactions for alice
+--- PASS: TestMain (2.47s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 50 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 52 transactions for alice
+    e2e_test.go:185: got 8 transactions for bob
+--- PASS: TestTransfer (2.34s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 52 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 7 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 54 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 8 transactions for dan
+    e2e_test.go:185: got 8 transactions for dan
+    e2e_test.go:185: got 8 transactions for dan
+    e2e_test.go:160: got 8 transactions for dan
+--- PASS: TestTransferToSecondNode (2.57s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 56 transactions for alice
+--- PASS: TestRedeem (2.29s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 56 transactions for alice
+    e2e_test.go:160: got 56 transactions for alice
+    e2e_test.go:185: got 8 transactions for bob
+    e2e_test.go:160: got 8 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 8 transactions for dan
+    e2e_test.go:160: got 8 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.07s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 56 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 57 transactions for alice
+--- PASS: TestMain (2.97s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 57 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 59 transactions for alice
+    e2e_test.go:185: got 9 transactions for bob
+--- PASS: TestTransfer (2.40s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 59 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 8 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 61 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 9 transactions for dan
+    e2e_test.go:185: got 9 transactions for dan
+    e2e_test.go:185: got 9 transactions for dan
+    e2e_test.go:160: got 9 transactions for dan
+--- PASS: TestTransferToSecondNode (2.66s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 63 transactions for alice
+--- PASS: TestRedeem (2.32s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 63 transactions for alice
+    e2e_test.go:160: got 63 transactions for alice
+    e2e_test.go:185: got 9 transactions for bob
+    e2e_test.go:160: got 9 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 9 transactions for dan
+    e2e_test.go:160: got 9 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.10s)
+=== RUN   TestMain
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 63 transactions for alice
+    e2e_test.go:151: issued 1000 TEST to alice on owner1
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 64 transactions for alice
+--- PASS: TestMain (3.11s)
+=== RUN   TestTransfer
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 64 transactions for alice
+    e2e_test.go:201: alice transferred 100 TEST to bob
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 66 transactions for alice
+    e2e_test.go:185: got 10 transactions for bob
+--- PASS: TestTransfer (2.53s)
+=== RUN   TestTransferToSecondNode
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 66 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 9 transactions for dan
+    e2e_test.go:201: alice transferred 100 TEST to dan
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 68 transactions for alice
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 10 transactions for dan
+    e2e_test.go:185: got 10 transactions for dan
+    e2e_test.go:185: got 10 transactions for dan
+    e2e_test.go:160: got 10 transactions for dan
+--- PASS: TestTransferToSecondNode (2.58s)
+=== RUN   TestRedeem
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:216: alice redeemed 10 TEST
+    e2e_test.go:225: got 2 accounts
+    e2e_test.go:185: got 70 transactions for alice
+--- PASS: TestRedeem (2.38s)
+=== RUN   TestIfAuditorMatchesOwnerHistory
+    e2e_test.go:185: got 70 transactions for alice
+    e2e_test.go:160: got 70 transactions for alice
+    e2e_test.go:185: got 10 transactions for bob
+    e2e_test.go:160: got 10 transactions for bob
+    e2e_test.go:185: got 0 transactions for carlos
+    e2e_test.go:160: got 0 transactions for carlos
+    e2e_test.go:185: got 10 transactions for dan
+    e2e_test.go:160: got 10 transactions for dan
+--- PASS: TestIfAuditorMatchesOwnerHistory (0.09s)
+PASS
+ok      github.com/hyperledger/fabric-samples/token-sdk/e2e     111.252s
